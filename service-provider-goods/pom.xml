@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ys</groupId>
-    <artifactId>register-center-demo</artifactId>
+    <artifactId>service-provider-goods</artifactId>
     <version>1.0</version>
-    <name>register-center-demo</name>
-    <description>register-center-demo</description>
+    <name>service-provider-goods</name>
+    <description>service-provider-goods</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -21,10 +21,19 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
+        <!-- 引入spring web模块 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--引入eureka的客户端模块[提供服务提供者和消费者相关功能] -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -37,7 +46,6 @@
             </exclusions>
         </dependency>
     </dependencies>
-
     <dependencyManagement>
         <dependencies>
             <dependency>

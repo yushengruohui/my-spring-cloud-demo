@@ -1,13 +1,13 @@
-package com.ys.register_center;
+package com.ys.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RegisterCenterDemoApplicationTests {
+class ServiceConsumerUserApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
