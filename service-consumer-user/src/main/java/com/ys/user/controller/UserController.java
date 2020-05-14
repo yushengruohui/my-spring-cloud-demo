@@ -1,5 +1,6 @@
 package com.ys.user.controller;
 
+import com.ys.user.domain.entity.Goods;
 import com.ys.user.feign.GoodsFeign;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,5 +35,12 @@ public class UserController {
         log.info(">>>> 服务消费方正常end <<<<");
     }
 
-
+    @GetMapping("/test2")
+    public void get2() {
+        // 测试远程调用
+        log.info(">>>> 服务消费方正常start <<<<");
+        Goods goods = goodsFeign.test(new Goods(1123, "测试用例", null, null));
+        System.out.println("goods = " + goods);
+        log.info(">>>> 服务消费方正常end <<<<");
+    }
 }

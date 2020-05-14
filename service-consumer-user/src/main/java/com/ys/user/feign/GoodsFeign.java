@@ -1,5 +1,6 @@
 package com.ys.user.feign;
 
+import com.ys.user.domain.entity.Goods;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +19,10 @@ public interface GoodsFeign {
     @RequestMapping(value = "", method = RequestMethod.GET)
     // @RequestParam，基础数据类型参数，一定要加上该注释
     String getGoods(@RequestParam("id") String id);
+
+    @RequestMapping(value = "/test", method = RequestMethod.POST)
+        // Goods test(@RequestParam("id") Integer id, @RequestParam("name") String name, @RequestParam("createdAt") Date createdAt);
+    Goods test(Goods goods);
 
     // @RequestBody 该注解每个方法最多只能传递一个对象，如果参数前没有调用注释，默认添加@RequestBody
     @RequestMapping(value = "", method = RequestMethod.POST)

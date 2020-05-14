@@ -1,5 +1,6 @@
 package com.ys.goods.controller;
 
+import com.ys.goods.domain.entity.Goods;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,14 @@ public class ProviderController {
     @PostMapping("/goods")
     public Map<String, Object> add(@RequestBody Map<String, Object> goods) {
         goods.put("id", "xxx");
+        return goods;
+    }
+
+    @PostMapping("/goods/test")
+    public Goods add(Goods goods) {
+        log.info(">>>> 服务提供方接受正常 <<<<");
+        System.out.println("goods = " + goods);
+        goods.setType("测试品");
         return goods;
     }
 }
